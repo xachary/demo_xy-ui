@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta data-hid="description" name="description" content="xy-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Format date</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./demo.css" />
+    <div id="app" class="pad">
+      <h3>Format</h3>
+
+      <div>yyyy-MM-dd hh:mm:ss</div>
+      <div>{{new Date() | $xyFormat.date.format}}</div>
+      <!-- <div>{{$xyFormat.date.format(new Date())}}</div> -->
+      <div>hh:mm:ss</div>
+      <div>{{new Date() | $xyFormat.date.format('hh:mm:ss')}}</div>
+      <!-- <div>{{$xyFormat.date.format(new Date(), 'hh:mm:ss')}}</div> -->
+      <h3>Relative date</h3>
+
+      <div>
+        {{new Date() | $xyFormat.date.format('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <div>{{new Date() | $xyFormat.date.relativeDate}}</div>
+      <br />
+      <div>
+        {{new Date() - 1000*60 | $xyFormat.date.format('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <div>{{new Date() - 1000*60 | $xyFormat.date.relativeDate}}</div>
+      <br />
+      <div>
+        {{new Date() - 1000*60*5 | $xyFormat.date.format('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <div>{{new Date() - 1000*60*5 | $xyFormat.date.relativeDate}}</div>
+      <br />
+      <div>
+        {{new Date() - 1000*60*30 | $xyFormat.date.format('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <div>{{new Date() - 1000*60*30 | $xyFormat.date.relativeDate}}</div>
+      <br />
+      <div>
+        {{new Date() - 1000*60*60 | $xyFormat.date.format('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <div>{{new Date() - 1000*60*60 | $xyFormat.date.relativeDate}}</div>
+      <br />
+      <div>
+        {{new Date() - 1000*60*60*24 | $xyFormat.date.format('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <div>{{new Date() - 1000*60*60*24 | $xyFormat.date.relativeDate}}</div>
+      <br />
+      <div>
+        {{new Date() - 1000*60*60*24*3 | $xyFormat.date.format('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <div>{{new Date() - 1000*60*60*24*3 | $xyFormat.date.relativeDate}}</div>
+      <br />
+      <div>
+        {{new Date() - 1000*60*60*24*4 | $xyFormat.date.format('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <div>{{new Date() - 1000*60*60*24*4 | $xyFormat.date.relativeDate}}</div>
+      <h3>Today</h3>
+
+      <div>{{ $xyFormat.date.today('yyyy-MM-dd hh:mm:ss') }}</div>
+      <h3>Start date</h3>
+
+      <div>
+        {{new Date() | $xyFormat.date.startTime('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <h3>End date</h3>
+
+      <div>{{new Date() | $xyFormat.date.endTime('yyyy-MM-dd hh:mm:ss')}}</div>
+      <h3>Week start date</h3>
+
+      <div>
+        {{new Date() | $xyFormat.date.weekStartTime('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <h3>Week end date</h3>
+
+      <div>
+        {{new Date() | $xyFormat.date.weekEndTime('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <h3>Month start date</h3>
+
+      <div>
+        {{new Date() | $xyFormat.date.monthStartTime('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <h3>Month end date</h3>
+
+      <div>
+        {{new Date() | $xyFormat.date.monthEndTime('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <h3>Year start date</h3>
+
+      <div>
+        {{new Date() | $xyFormat.date.yearStartTime('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <h3>Year end date</h3>
+
+      <div>
+        {{new Date() | $xyFormat.date.yearEndTime('yyyy-MM-dd hh:mm:ss')}}
+      </div>
+      <h3>Span seconds</h3>
+
+      <div>{{new Date('2019/11/20') | $xyFormat.date.format}}</div>
+      <div>{{new Date() | $xyFormat.date.format}}</div>
+      <div>
+        {{$xyFormat.date.timeSpanSecond(new Date('2019/11/20'),new Date())}} seconds
+      </div>
+      <h3>Span hours</h3>
+
+      <div>{{new Date('2019/11/20') | $xyFormat.date.format}}</div>
+      <div>{{new Date() | $xyFormat.date.format}}</div>
+      <div>
+        {{$xyFormat.date.timeSpanHour(new Date('2019/11/20'),new Date())}} hours
+      </div>
+      <h3>Span days</h3>
+
+      <div>{{new Date('2019/11/11') | $xyFormat.date.format}}</div>
+      <div>{{new Date() | $xyFormat.date.format}}</div>
+      <div>
+        {{$xyFormat.date.timeSpanDay(new Date('2019/11/11'),new Date())}} days
+      </div>
+    </div>
+    <script src="../vue@2.6.10.js"></script>
+    <script src="../dist/xy-ui.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data() {
+          return {}
+        },
+        methods: {
+          onChange(time) {
+            console.log(time)
+          },
+          onFinish() {
+            console.log('Countdown finish')
+          },
+          onStart() {
+            this.$refs.timing.start()
+          },
+          onPause() {
+            this.$refs.timing.pause()
+          },
+          onReset() {
+            this.$refs.timing.reset()
+          },
+        },
+        mounted() {},
+      })
+    </script>
+  </body>
+</html>

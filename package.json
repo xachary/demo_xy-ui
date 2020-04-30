@@ -1,0 +1,23 @@
+{
+  "name": "demo_xy-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "vue@2.6.10.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@xachary/xy-format": "^1.0.6"
+  },
+  "scripts": {
+    "start": "xy-format"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xachary/demo_xy-ui.git"
+  },
+  "author": "xachary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xachary/demo_xy-ui/issues"
+  },
+  "homepage": "https://github.com/xachary/demo_xy-ui#readme"
+}

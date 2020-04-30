@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta data-hid="description" name="description" content="xy-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Btn act</title>
+  </head>
+
+  <body>
+    <link rel="stylesheet" href="./demo.css" />
+    <style>
+      .sample {
+        display: flex;
+        flex-direction: column;
+      }
+
+      button {
+        padding: 1em 2em;
+        border: 1px solid #333;
+        margin: 1em;
+        display: block;
+        text-align: center;
+      }
+
+      [xy-btn-act][disabled] {
+        filter: grayscale(1);
+        background-color: rgba(0, 0, 0, 0.1);
+        color: rgba(0, 0, 0, 0.2);
+        border-color: rgba(0, 0, 0, 0.2);
+      }
+    </style>
+    <div id="app">
+      <div class="sample">
+        <button v-xy-btn-act:style.scale>scale</button>
+        <button v-xy-btn-act:style.color="'rgba(0, 0, 255, 0.2)'">color</button>
+        <button style="background-color: yellow;" v-xy-btn-act:style.grayscale>grayscale</button>
+        <button v-xy-btn-act:style.wave="'rgba(255, 0, 0, 0.5)'">wave</button>
+        <button v-xy-btn-act:style.scale disabled>disabled</button>
+      </div>
+    </div>
+    <script src="../vue@2.6.10.js"></script>
+    <script src="../dist/xy-ui.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data() {
+          return {
+            status: '',
+          }
+        },
+        methods: {},
+        mounted() {},
+      })
+    </script>
+  </body>
+</html>

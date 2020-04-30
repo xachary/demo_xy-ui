@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta data-hid="description" name="description" content="xy-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Scroll bottom</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./demo.css" />
+    <style>
+      .sample {
+        height: 150vh;
+        line-height: 100vh;
+        text-align: center;
+        box-shadow: 0 0 50px 0 #333 inset;
+      }
+    </style>
+    <div id="app">
+      <div class="sample">
+        <xy-scroll-bottom threshold="0" @on-bottom="onBottom"></xy-scroll-bottom>
+        scroll me down
+      </div>
+    </div>
+    <script src="../vue@2.6.10.js"></script>
+    <script src="../dist/xy-ui.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data() {
+          return {
+            status: '',
+          }
+        },
+        methods: {
+          onBottom() {
+            alert('bottom')
+          },
+        },
+        mounted() {},
+      })
+    </script>
+  </body>
+</html>
